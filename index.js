@@ -1,4 +1,4 @@
-const apiKey = "TyyqlQDFmTZTbVKPauKderycw5qLeX0VYlVvSdta";
+const apiKey = "YOUR_API_KEY_HERE";
 const searchURL = "https://developer.nps.gov/api/v1/parks";
 
 function formatQueryParams(params) {
