@@ -36,7 +36,7 @@ function getParks(query, maxResults = 5) {
     limit: maxResults
   };
   const queryString = formatQueryParams(params);
-  const url = searchURL + "?" + queryString + "&api_key=TyyqlQDFmTZTbVKPauKderycw5qLeX0VYlVvSdta";
+  const url = searchURL + "?" + queryString + `&api_key=${apiKey}`;
 
   console.log(url);
 
