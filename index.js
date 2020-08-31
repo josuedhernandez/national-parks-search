@@ -58,7 +58,7 @@ function watchForm() {
   // Watch for submissions in form
   $("form").submit((event) => {
     event.preventDefault();
-    const searchParksState = $("#js-search-park").val().split(",");
+    const searchParksState = $("#js-search-park").val().replace(/ /g, '').split(",");
     const maxResults = $("#js-max-results").val();
     getParks(searchParksState, maxResults);
   });
