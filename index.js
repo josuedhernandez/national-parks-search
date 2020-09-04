@@ -32,12 +32,11 @@ function displayResults(responseJson) {
 
 function getParks(query, maxResults = 5) {
   const params = {
-    api_key: apiKey,
     stateCode: query,
-    limit: maxResults,
+    limit: maxResults
   };
   const queryString = formatQueryParams(params);
-  const url = searchURL + "?" + queryString;
+  const url = searchURL + "?" + queryString + `&api_key=${apiKey}`;
 
   console.log(url);
 
@@ -58,7 +57,7 @@ function watchForm() {
   // Watch for submissions in form
   $("form").submit((event) => {
     event.preventDefault();
-    const searchParksState = $("#js-search-park").val().split(",");
+    const searchParksState = $("#js-search-park").val().replace(/ /g, '').split(",");
     const maxResults = $("#js-max-results").val();
     getParks(searchParksState, maxResults);
   });
